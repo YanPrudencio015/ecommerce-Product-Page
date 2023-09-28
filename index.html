@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./productpage.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+    
+  </style>
+</head>
+<body>
+<header>
+    <div class="cartContainer">
+        <p id="cartTitle">Cart</p>
+        <div id="cardProductinfo">
+            <p id="string">Your cart is empty.</p>
+        </div>
+    </div>
+    <svg  onclick="Menu_Mobile_Btn()" width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/></svg>
+    <h1>sneakers</h1>
+    <div id="menu">
+        <a href="#Collection">Collection</a>
+        <a href="#Men">Men</a>
+        <a href="#Women">Women</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact</a>
+    </div>
+    <div id="profile">
+        <input type="button" id="productCounter" value="0">
+        <!-- <button type="button" id="productCounter" value="1"></button> -->
+        <svg id="cartIcon" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+        <div id="profileImg">
+            <img src="./images/image-avatar.png" alt="image-avatar">
+        </div>
+    </div>
+</header>
+  <main id="main">
+    <section id="container">
+        <div class="class first">
+            <div class="viewportImg">
+                <img id="mainImage" src="./images/image-product-1.jpg" alt="">
+                <div class="btnsImg">
+                    <button id="mobilebtnNext" >
+                        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                    </button>
+                    <button id="mobilebtnPrevious">
+                        <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="imgCategories">
+                <div class="img-card">
+                    <img class="image-product" src="./images/image-product-1-thumbnail.jpg" alt="product-1"> 
+                </div>
+                <div class="img-card">
+                    <img class="image-product" src="./images/image-product-2-thumbnail.jpg" alt="product-2">
+                </div>
+                <div class="img-card">
+                    <img class="image-product" src="./images/image-product-3-thumbnail.jpg" alt="product-3">
+                </div>
+                <div class="img-card">
+                    <img class="image-product" src="./images/image-product-4-thumbnail.jpg" alt="product-4">
+                </div>
+            
+            </div>
+        </div>
+        <div class="class second">
+            <div class="texts">
+                <p>SNEAKER COMPANY</p>
+                <h1>Fall Limited Edition Sneakers</h1>
+                <p id="productinfo">These low-profile sneakers are your perfect casual wear companion.
+                    Featuring a durable rubber outer sole They'll withstand everything 
+                    the weather  can offer.
+                </p>
+            </div>
+            <div class="prices">
+                <h3 id="newPrice">$125.00</h3>
+                <p id="rebate">50%</p>
+                <p id="lastPrice">$250.00</p>
+            </div>
+            <div class="quantities">
+                <div id="counter">
+                    <i   id="minus" class="fa-solid fa-minus"></i>
+                    <input type="number" id="resultNumber">
+                    <i   id="plus" class="fa-solid fa-plus"></i>
+                </div>
+
+
+                <button id="cartBtn" onclick="addToCart()">
+                    <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffff" fill-rule="nonzero"/></svg>
+                    Add to cart
+                </button>
+            </div>
+        </div>
+
+    </section>
+  </main>
+
+
+
+  <div class="menu_Mobile_Container">
+    <svg id="btn_Close" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
+    <ul class="menu_Mobile_List">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+  </div>
+
+  <div class="container_img_Product">
+        <div class="image_squad">
+            <p id="close_Container">
+                <svg id="close-btn-viewport-large" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/></svg>
+            </p>
+            <div class="image_viewport">
+                <img id="displayed_image" class="img"  src="./images/image-product-1.jpg" alt="">
+                <!-- <img id="mainImage" src="./images/image-product-1.jpg" alt=""> -->
+            </div>
+
+            <div class="imgCategories">
+                <div class="img-card">
+                    <img class="image-product-large" src="./images/image-product-1-thumbnail.jpg" alt="product-1"> 
+                </div>
+                <div class="img-card">
+                    <img class="image-product-large" src="./images/image-product-2-thumbnail.jpg" alt="product-2">
+                </div>
+                <div class="img-card">
+                    <img class="image-product-large" src="./images/image-product-3-thumbnail.jpg" alt="product-3">
+                </div>
+                <div class="img-card">
+                    <img class="image-product-large" src="./images/image-product-4-thumbnail.jpg" alt="product-4">
+                </div>
+            </div>
+
+            <div id="container_control">
+                <button type="button" class="btn_images_container next-btn">
+                    <svg id="next-btn" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                </button>
+                <button type="button" class="btn_images_container previous-btn">
+                    <svg id="previous-btn" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                </button>
+            </div>
+        </div>
+
+
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/YanPrudencio015">Yan Pereira Prudencio</a>.
+  </div>
+  <script src="./product.js"></script>
+</body>
+</html>

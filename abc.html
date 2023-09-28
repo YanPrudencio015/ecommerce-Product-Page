@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizar Botões em Input Type Number</title>
+    <style>
+        /* Estilize o botão de incremento */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Estilize a aparência dos botões de incremento */
+        input[type="number"]::-webkit-inner-spin-button::before,
+        input[type="number"]::-webkit-outer-spin-button::before {
+            content: "\f077"; /* Use um ícone personalizado, como um Unicode FontAwesome */
+            font-family: FontAwesome; /* Use a fonte FontAwesome ou outra fonte de ícones */
+            display: block;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            color: #555;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+            border: none; outline: none;
+        }
+        body{
+            width: 100%;
+            height: 38em;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .quadrado{
+            width: 55%;
+            height: 15em;
+            background-color: #219C90;
+            position: fixed;
+            left: 4em;
+
+        }
+
+        button{
+            background-color: #78D6C6;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 600ms;
+
+        }
+
+        .quadrado_movido{
+            left: 10em;
+            transition: 600ms;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <button onclick="Mover()">Mover</button>
+
+    <div class="quadrado"></div>
+
+<script>
+
+    function Mover(){
+        let quadrado = document.getElementsByClassName("quadrado")[0]
+
+        quadrado.classList.toggle("quadrado_movido")
+    }
+</script>
+</body>
+</html>
