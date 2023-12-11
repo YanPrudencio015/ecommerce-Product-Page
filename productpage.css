@@ -562,7 +562,7 @@ a{
 
     .container_img_Product .image_squad{
         width: 40%;
-        height: 90%;
+        height: 76%;
         border-radius: 10px;
         opacity: 100%;
         display: flex;
@@ -570,6 +570,8 @@ a{
         gap: 1em;
         opacity: 100%;
         position: relative;
+        top: -3em;
+    
     }
 
     .image_squad #close_Container{

@@ -3,21 +3,14 @@
     const minusBtn = document.getElementById("minus");
     const plusBtn = document.getElementById("plus");
     var result = document.getElementById("resultNumber");
-
     let quanti = 0;
 
 document.addEventListener("click", btn=>{
-
-    // console.log(btn.target)
-
     if(btn.target == minusBtn){
-        
         if(quanti > 0){
-
-                quanti -= 1;
-                result.value = quanti; 
+            quanti -= 1;
+            result.value = quanti; 
         }
-        
     } else if(btn.target == plusBtn){
         quanti += 1;
         result.value = quanti
@@ -86,22 +79,29 @@ document.addEventListener("click", btn=>{
     function enlargeImage(){
         const mainImage = document.getElementById("mainImage");
         var container = document.getElementsByClassName("container_img_Product")[0];
-
-
+        let close = document.getElementById("close_Container")
         mainImage.addEventListener("click", ()=>{
-            console.log(mainImage)
+            // console.log(mainImage)
             container.classList.add("container_img_Product_active");
         })
-
+        
         document.addEventListener("click",(e)=>{
-
-            if(e.target == close || e.target == container ){
-
+            
+            if(e.target == container){
+                
+                return container.classList.remove("container_img_Product_active");   
+            }
+            
+            
+        });
+        
+        close.addEventListener("click",()=>{
             return container.classList.remove("container_img_Product_active");   
-        }});
+        })
+
+
 
     } 
-
 
 
 
